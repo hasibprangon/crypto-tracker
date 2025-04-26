@@ -1,12 +1,25 @@
-# React + Vite
+# 🪙 Real-Time Crypto Price Tracker
 
-This template provides a minimal setup to get React working in Vite with HMR and some ESLint rules.
+This is a responsive React + Redux Toolkit app that simulates real-time crypto data updates, displaying assets in a dynamic table UI.
 
-Currently, two official plugins are available:
+## 🛠️ Stack
+- React
+- Redux Toolkit
+- Tailwind CSS (optional)
+- setInterval for simulated updates
 
-- [@vitejs/plugin-react](https://github.com/vitejs/vite-plugin-react/blob/main/packages/plugin-react) uses [Babel](https://babeljs.io/) for Fast Refresh
-- [@vitejs/plugin-react-swc](https://github.com/vitejs/vite-plugin-react/blob/main/packages/plugin-react-swc) uses [SWC](https://swc.rs/) for Fast Refresh
+## 🚀 Features
+- 5 Crypto assets (BTC, ETH, USDT, BNB, XRP.)
+- Dynamic price, volume & percent change updates
+- Color-coded changes (green/red)
+- Responsive design
+- Placeholder 7D chart images
 
-## Expanding the ESLint configuration
+## 📦 Setup
 
-If you are developing a production application, we recommend using TypeScript with type-aware lint rules enabled. Check out the [TS template](https://github.com/vitejs/vite/tree/main/packages/create-vite/template-react-ts) for information on how to integrate TypeScript and [`typescript-eslint`](https://typescript-eslint.io) in your project.
+```bash
+git clone https://github.com/your-username/crypto-price-tracker
+cd crypto-price-tracker
+npm install
+code .
+npm run dev
