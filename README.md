@@ -5,7 +5,7 @@ This is a responsive React + Redux Toolkit app that simulates real-time crypto d
 ## 🛠️ Stack
 - React
 - Redux Toolkit
-- Tailwind CSS (optional)
+- Tailwind CSS 
 - setInterval for simulated updates
 
 ## 🚀 Features
@@ -24,7 +24,7 @@ npm install
 code .
 npm run dev
 
-## 🚀 Live Demo
+### 🌐 Live Site URL
 
 Check out the live version of the project here:  
-👉 [Live Site](https://real-time-crypto-price-tracker.netlify.app/)
+👉 [Live Site Link](https://real-time-crypto-price-tracker.netlify.app)
