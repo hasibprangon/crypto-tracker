@@ -23,3 +23,8 @@ cd crypto-price-tracker
 npm install
 code .
 npm run dev
+
+## 🚀 Live Demo
+
+Check out the live version of the project here:  
+👉 [Live Site](https://real-time-crypto-price-tracker.netlify.app/)
