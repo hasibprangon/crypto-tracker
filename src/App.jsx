@@ -1,35 +1,35 @@
-import { useState } from 'react'
-import reactLogo from './assets/react.svg'
-import viteLogo from '/vite.svg'
-import './App.css'
+import React, { useEffect } from 'react';
+import CryptoTable from './Features/Crypto/CryptoTable';
+import { useDispatch, useSelector } from 'react-redux';
+import { updateAssets } from './Features/Crypto/CryptoSlice';
 
 function App() {
-  const [count, setCount] = useState(0)
+  const dispatch = useDispatch();
+  const assets = useSelector(state => state.crypto.assets);
+
+  useEffect(() => {
+    const interval = setInterval(() => {
+      const newAssets = assets.map(asset => ({
+        ...asset,
+        price: +(asset.price * (1 + (Math.random() - 0.5) / 50)).toFixed(2),
+        change1h: +(Math.random() * 10 - 5).toFixed(2),
+        change24h: +(Math.random() * 10 - 5).toFixed(2),
+        change7d: +(Math.random() * 10 - 5).toFixed(2),
+        volume24h: asset.volume24h + Math.floor(Math.random() * 1000000 - 500000),
+      }));
+      dispatch(updateAssets(newAssets));
+    }, 1500);
+
+    return () => clearInterval(interval);
+  }, [assets, dispatch]);
 
   return (
-    <>
-      <div>
-        <a href="https://vite.dev" target="_blank">
-          <img src={viteLogo} className="logo" alt="Vite logo" />
-        </a>
-        <a href="https://react.dev" target="_blank">
-          <img src={reactLogo} className="logo react" alt="React logo" />
-        </a>
-      </div>
-      <h1>Vite + React</h1>
-      <div className="card">
-        <button onClick={() => setCount((count) => count + 1)}>
-          count is {count}
-        </button>
-        <p>
-          Edit <code>src/App.jsx</code> and save to test HMR
-        </p>
-      </div>
-      <p className="read-the-docs">
-        Click on the Vite and React logos to learn more
-      </p>
-    </>
-  )
+    <div className="min-h-screen bg-white font-roboto">
+      <h1 className="text-center md:text-3xl text-xl font-bold my-4">Crypto Price Tracker</h1>
+      <p className='text-center md:text-lg text-base'>Track the Market. Stay Ahead.</p>
+      <CryptoTable />
+    </div>
+  );
 }
 
-export default App
+export default App;

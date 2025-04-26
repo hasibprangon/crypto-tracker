@@ -1,11 +1,8 @@
-import React from 'react';
+import { configureStore } from "@reduxjs/toolkit";
+import cryptoReducer from "../Features/Crypto/CryptoSlice";
 
-const Store = () => {
-    return (
-        <div>
-            
-        </div>
-    );
-};
-
-export default Store;
+export const store = configureStore({
+    reducer: {
+        crypto: cryptoReducer,
+    },
+})

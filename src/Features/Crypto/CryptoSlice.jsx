@@ -1,11 +1,19 @@
-import React from 'react';
+import { createSlice } from '@reduxjs/toolkit';
+import { generateMockData } from './mockData';
 
-const CryptoSlice = () => {
-    return (
-        <div>
-            
-        </div>
-    );
+const initialState = {
+  assets: generateMockData(),
 };
 
-export default CryptoSlice;
+const cryptoSlice = createSlice({
+  name: 'crypto',
+  initialState,
+  reducers: {
+    updateAssets: (state, action) => {
+      state.assets = action.payload;
+    }
+  }
+});
+
+export const { updateAssets } = cryptoSlice.actions;
+export default cryptoSlice.reducer;
